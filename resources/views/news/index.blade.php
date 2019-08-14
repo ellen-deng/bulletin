@@ -1,10 +1,11 @@
 <!-- news index -->
 @extends('layout.main')
 @section('content')
-
+<!-- 
 <iframe src="123" width="250px" height="150px" frameborder="0" scrolling="no"></iframe>
 <img src="/123.jpg" alt="">
-
+-->
+<br>
 <table border="0" class="table table-hover">
     <thead>
         <tr>
