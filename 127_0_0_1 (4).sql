@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2019 年 08 月 15 日 11:45
+-- 產生時間： 2019 年 08 月 15 日 11:57
 -- 伺服器版本： 10.3.16-MariaDB
 -- PHP 版本： 7.3.6
 
@@ -56,6 +56,7 @@ INSERT INTO `category` (`category_id`, `category_name`) VALUES
 CREATE TABLE `collection` (
   `collection_id` int(20) NOT NULL,
   `member_id` int(20) NOT NULL,
+  `category_id` int(5) NOT NULL,
   `news_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -123,7 +124,8 @@ ALTER TABLE `category`
 ALTER TABLE `collection`
   ADD PRIMARY KEY (`collection_id`),
   ADD KEY `member_id` (`member_id`),
-  ADD KEY `news_id` (`news_id`);
+  ADD KEY `news_id` (`news_id`),
+  ADD KEY `category_id` (`category_id`);
 
 --
 -- 資料表索引 `member`
@@ -177,7 +179,8 @@ ALTER TABLE `news`
 --
 ALTER TABLE `collection`
   ADD CONSTRAINT `collection_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `member` (`member_id`),
-  ADD CONSTRAINT `collection_ibfk_2` FOREIGN KEY (`news_id`) REFERENCES `news` (`news_id`);
+  ADD CONSTRAINT `collection_ibfk_2` FOREIGN KEY (`news_id`) REFERENCES `news` (`news_id`),
+  ADD CONSTRAINT `collection_ibfk_3` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
 
 --
 -- 資料表的限制式 `news`
