@@ -13,7 +13,6 @@
 @yield('head')
 
 </head>
-
 <body>
     <div class="container">
         <table border="0" width="100%">
@@ -42,6 +41,17 @@
                 </td>
             </tr>
         </table>
+
+<!-- Search input
+<div class="form-group">-->
+<br>
+<form method="post" action="/">
+@csrf
+<div class="col-md-4">
+    <input id="keyword" name="keyword" type="search" placeholder="title keyword" class="form-control input-md">
+</div>
+<button type="submit" class="btn btn-md btn-default"><span class="glyphicon glyphicon-search"></span></button>
+</form>
 
 @yield('content')
 

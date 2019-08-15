@@ -19,9 +19,14 @@ class NewsController extends Controller
     {
         $news = News::orderby('updated_at', 'desc')->get();
         return view('news.index',compact('news'));
-        // return dd($news);
     }
+    function keyword(Request $request){
 
+        $keyword = $request->keyword;
+        $news = News::where('title', 'LIKE', "%$keyword%")->orderby('updated_at', 'desc')->get();
+        return view('news.index',compact('news'));
+
+    }
     /**
      * Show the form for creating a new resource.
      *

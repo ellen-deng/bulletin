@@ -14,6 +14,7 @@
 use App\Http\Controllers\NewsController;
 
 Route::get('/', 'NewsController@index');
+Route::post('/', 'NewsController@keyword');
 Route::resource('news', 'NewsController');
 Route::get('/content/{id}', 'NewsController@content');
 
