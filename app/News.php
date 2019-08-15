@@ -12,7 +12,7 @@ class News extends Model
     protected $primaryKey = "news_id";
 
     function category() {
-        return $this->hasOne(Category::class, 'category_id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     function member() {
