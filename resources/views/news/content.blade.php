@@ -12,6 +12,7 @@
             <td>
             <span class="pull-right">
                 <form method="post" action="/news/{{$news->news_id}}">
+                    <a href="//{{""}}" class="btn btn-xs btn-success"><span class="glyphicon glyphicon-heart"></span> 收藏</a> |
                     <a href="/news/{{$news->news_id}}/edit" class="btn btn-xs btn-info"><span class="glyphicon glyphicon-pencil"></span> 修改</a> |
                     @csrf
                     @method('DELETE')
