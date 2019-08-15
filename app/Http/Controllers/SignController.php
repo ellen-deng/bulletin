@@ -28,8 +28,6 @@ class SignController extends Controller
             Session::put('member_id', $member->member_id);
             Session::put('member_name', $member->member_name);
             Session::put('rank', $member->rank);
-            //$value = Session::get('member_id');
-            //$value = Session::all();
             return redirect('/');
 
         }else{

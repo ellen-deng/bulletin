@@ -1,4 +1,4 @@
-<!-- signIn -->
+<!-- register -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,10 +11,18 @@
         <style>body {font:180% "Trebuchet MS", sans-serif;}</style>
     </head>
     <body>
-        <form method="post" action="" class="form-horizontal ">
+        <form method="post" action="/member" class="form-horizontal ">
             @csrf
-            <p class="h3 mb-4 text-center">Sign in</p>
+            <p class="h3 mb-4 text-center">Register</p>
             <fieldset>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="name"></label>
+                    <div class="col-md-4">
+                        <input id="name" name="name" type="text" placeholder="your name" class="form-control input-md">
+                    </div>
+                </div>
 
                 <!-- Text input-->
                 <div class="form-group">
@@ -36,12 +44,10 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for=""></label>
                     <div class="col-md-4">
-                        <button id="" name="" class="btn btn-info btn-block my-4">Sign in</button>
+                        <button id="" name="" class="btn btn-success btn-block my-4">Register</button>
                     </div>
                 </div>
-                <div class="text-center">
-                    <p>Not a member?<a href="member/create">Register</a></p>
-                </div>
+
             </fieldset>
         </form>
     </body>

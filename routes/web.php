@@ -22,3 +22,8 @@ Route::post('/signIn', 'SignController@verify');
 Route::get('/signOut', 'SignController@signOut');
 
 Route::resource('category', 'CategoryController');
+
+Route::resource('member', 'MemberController');
+Route::get('/membersignIn', 'SignController@verify');
+
+

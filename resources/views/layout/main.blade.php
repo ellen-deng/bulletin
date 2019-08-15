@@ -13,6 +13,7 @@
 @yield('head')
 
 </head>
+
 <body>
     <div class="container">
         <table border="0" width="100%">
@@ -22,7 +23,9 @@
                     <a href="/" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-home"></span> Home</a>
 
                     @if (Session::has('member_id'))
-                    <a href="/category" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-cog"></span> Setting</a>
+                        @if (Session::get('rank')==1)
+                        <a href="/category" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-cog"></span> Setting</a>
+                        @endif
                     <a href="/signOut" class="btn btn-md btn-warning "><span class="glyphicon glyphicon-log-out"></span> Sign out</a>&nbsp;
                     @else
                     <a href="/signIn" class="btn btn-md btn-warning "><span class="glyphicon glyphicon-log-in"></span> Sign in</a>&nbsp;

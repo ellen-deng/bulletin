@@ -1,7 +1,7 @@
 <!-- news index -->
 @extends('layout.main')
 @section('content')
-<!-- 
+<!--
 <iframe src="123" width="250px" height="150px" frameborder="0" scrolling="no"></iframe>
 <img src="/123.jpg" alt="">
 -->
@@ -11,7 +11,7 @@
         <tr>
             <th>Time</th>
             <th>Title</th>
-            @if (Session::has('member_id'))
+            @if (Session::has('member_id')&&(Session::get('rank')==1))
             <th align="right"><a href="/news/create" class="btn btn-md btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> 新增</a></th>
             @endif
         </tr>
@@ -22,7 +22,7 @@
             <td>{{$news->updated_at."/".$news->category['category_name']}}</td>
             <td><h4><a href="/content/{{$news->news_id}}" >{{$news->title}}</a> </h4></td>
 
-            @if (Session::has('member_id'))
+            @if ((Session::has('member_id'))&&(Session::get('rank')==1))
             <td>
                 <span class="pull-right">
                 <form method="post" action="/news/{{$news->news_id}}">

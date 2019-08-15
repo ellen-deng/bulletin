@@ -8,7 +8,7 @@
             <td><h2>{{$news->title}}</h2></td>
             <td></td>
 
-            @if (Session::has('member_id'))
+            @if (Session::has('member_id')&&(Session::get('rank')==1))
             <td>
             <span class="pull-right">
                 <form method="post" action="/news/{{$news->news_id}}">
