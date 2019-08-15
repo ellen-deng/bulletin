@@ -6,6 +6,14 @@
 <img src="/123.jpg" alt="">
 -->
 <br>
+<form method="post" action="/">
+    @csrf
+    <div class="col-md-4">
+        <input id="keyword" name="keyword" type="search" placeholder="title keyword" class="form-control input-md">
+    </div>
+    <button type="submit" class="btn btn-md btn-default"><span class="glyphicon glyphicon-search"></span></button>
+</form>
+<br>
 <table border="0" class="table table-hover">
     <thead>
         <tr>
